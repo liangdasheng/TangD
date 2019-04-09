@@ -53,23 +53,14 @@ public class WebController {
                 return "Crawler stopped...";
         }));
     }
-    public static class JSONResponseTransformer implements ResponseTransformer{
+    public static class JSONResponseTransformer implements ResponseTransformer {
         //Object->String
         //通过com.google.gson
         private Gson gson = new Gson();
+
         @Override
         public String render(Object o) throws Exception {
             return gson.toJson(o);
         }
     }
-
-//    public static void main(String[] args) {
-//        //字符串与对象之间的相互转换
-//        //与序列化类似，序列化是把对象转换为byte[]数组
-//        Gson gson = new Gson();
-//        WordCount wordCount = new WordCount();
-//        wordCount.setWord("java");
-//        wordCount.setCount(10);
-//        System.out.println(gson.toJson(wordCount));
-//    }
 }

@@ -32,7 +32,7 @@ public class tangshi {
         WebController webController = ObjectFactory.getInstance().getObject(WebController.class);
         LOGGER.info("Web Server launch...");
         //运行了web服务，提供接口
-  //      webController.launch();
+        webController.launch();
 
         //通过对象工厂的方式，启动爬虫
         //指定run-crawler的时候才会启动爬虫
@@ -42,13 +42,6 @@ public class tangshi {
             crawler.start();
         }
     */
-//        //web展示
-//     Spark.get("/hello",(req,resp)->{
-//         return "hello word"+LocalDateTime.now().toString() ;
-//     }) ;
-
-
-
         //管道->打印page里面的数据
         //crawler.addPipeline(new ConsolePipeline());
         //爬虫启动之后，需要给队列中加一个根文档，
